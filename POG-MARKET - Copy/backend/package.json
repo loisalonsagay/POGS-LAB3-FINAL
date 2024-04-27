@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "scripts": {
+    "test": "jest",
+    "start": "ts-node app.ts",
+    "dev": "nodemon app.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "babel-jest": "^29.7.0",
+    "jest": "^27.5.1",
+    "nodemon": "^3.1.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5"
+  }
+}

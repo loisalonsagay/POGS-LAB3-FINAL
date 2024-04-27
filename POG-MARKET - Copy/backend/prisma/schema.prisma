@@ -1,0 +1,28 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String
+  email     String
+  password  String
+  pogs      Pog[]    @relation("UserPogs")  // Adding the relation with "UserPogs" name
+}
+
+model Pog {
+  id         Int      @id @default(autoincrement())
+  name       String
+  price      Float
+  color      String
+  ticker     String
+  owner      User     @relation("UserPogs", fields: [ownerId], references: [id]) // Adding relation with "UserPogs" name
+  ownerId    Int
+}
